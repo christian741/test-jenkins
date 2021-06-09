@@ -40,7 +40,7 @@ public class User {
 	private LocalDate lastModify;
 	
 	@Column(name = "session",nullable = true)
-	private String Session;
+	private String session;
 	
 	@Column(name = "permission",nullable = true)
 	private int permission;
@@ -104,11 +104,11 @@ public class User {
 	}
 
 	public String getSession() {
-		return Session;
+		return session;
 	}
 
 	public void setSession(String session) {
-		Session = session;
+		session = session;
 	}
 
 	public int getPermission() {
