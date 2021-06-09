@@ -17,6 +17,6 @@ public class ControllerTest {
 	public ResponseEntity<?> getAlls(
 			){
 		
-		return new ResponseEntity<String>("hello world",HttpStatus.OK);
+		return new ResponseEntity<String>("que tal a todos como van",HttpStatus.OK);
 	}
 }
