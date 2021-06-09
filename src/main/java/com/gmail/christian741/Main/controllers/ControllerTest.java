@@ -30,7 +30,7 @@ public class ControllerTest {
 	public ResponseEntity<?> getAlls(
 			){
 		
-		return new ResponseEntity<String>("Lo que el profesor dijo",HttpStatus.OK);
+		return new ResponseEntity<String>("cambio de peticion",HttpStatus.OK);
 	}
 	
 	@Autowired
