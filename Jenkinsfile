@@ -2,6 +2,7 @@ pipeline {
     agent any
     stages {
         stage ('Clean') {
+         	git url: 'https://github.com/christian741/test-jenkins.git'
             steps {
                 withMaven{
                     sh 'mvn clean'
@@ -9,6 +10,7 @@ pipeline {
             }
         }
         stage ('Install') {
+        git url: 'https://github.com/christian741/test-jenkins.git'
             steps {
                 withMaven{
                     sh 'mvn install'
@@ -17,6 +19,7 @@ pipeline {
         }
 
         stage ('Build') {
+        git url: 'https://github.com/christian741/test-jenkins.git'
             steps {
                 withMaven{
                     sh 'mvn build'
@@ -25,6 +28,7 @@ pipeline {
         }
 
          stage ('Deploy') {
+         git url: 'https://github.com/christian741/test-jenkins.git'
             steps {
                 withMaven{
                     sh 'mvn deploy'
