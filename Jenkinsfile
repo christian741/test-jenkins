@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage ('Clean') {
             steps {
-                withMaven(maven: 'maven_3_8_1'){
+                withMaven{
                     sh 'mvn clean'
                 }
             }
         }
         stage ('Install') {
             steps {
-                withMaven(maven: 'maven_3_8_1'){
+                withMaven{
                     sh 'mvn install'
                 }
             }
@@ -18,7 +18,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                withMaven(maven: 'maven_3_8_1'){
+                withMaven{
                     sh 'mvn build'
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
 
          stage ('Deploy') {
             steps {
-                withMaven(maven: 'maven_3_8_1'){
+                withMaven{
                     sh 'mvn deploy'
                 }
             }
