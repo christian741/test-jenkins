@@ -2,34 +2,20 @@ package com.gmail.christian741.Main.entity;
 
 import java.time.LocalDate;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
-	public User() {
-		super();
-	}
-
-	public User(Integer id, String email, Boolean emailVerified, String password, String cellphone,
-			LocalDate createdDate, LocalDate lastModify, String session, short permission) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.emailVerified = emailVerified;
-		this.password = password;
-		this.cellphone = cellphone;
-		this.createdDate = createdDate;
-		this.lastModify = lastModify;
-		this.Session = session;
-		this.permission = permission;
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +24,7 @@ public class User {
 	@Column(name = "email", length = 50 , nullable = false)
 	private String email;
 	
-	@Column(name = "email_verified", length = 50 , nullable = false)
+	@Column(name = "email_verified", nullable = false)
 	private Boolean emailVerified;
 	
 	@Column(name = "password" , length = 20 , nullable = false)
@@ -47,18 +33,20 @@ public class User {
 	@Column(name = "cellphone",length = 10,nullable = false)
 	private String cellphone;
 	
-	@Column(name = "created_date")
+	@Column(name = "created_date",nullable = true)
 	private LocalDate createdDate;
 	
-	@Column(name = "last_modify")
+	@Column(name = "last_modify",nullable = true)
 	private LocalDate lastModify;
 	
-	@Column(name = "session")
+	@Column(name = "session",nullable = true)
 	private String Session;
 	
-	@Column(name = "permission")
-	private short permission;
+	@Column(name = "permission",nullable = true)
+	private int permission;
 
+	
+	
 	public Integer getId() {
 		return id;
 	}
@@ -123,11 +111,11 @@ public class User {
 		Session = session;
 	}
 
-	public short getPermission() {
+	public int getPermission() {
 		return permission;
 	}
 
-	public void setPermission(short permission) {
+	public void setPermission(int permission) {
 		this.permission = permission;
 	}
 }
